@@ -14,10 +14,11 @@ async function listInvoices() {
 }
 
 export async function GET() {
-  return;
   try {
-    return Response.json(await listInvoices());
+    const invoices = await listInvoices();
+    return Response.json(invoices);
   } catch (error) {
-    return Response.json({ error }, { status: 500 });
+    console.error("Error fetching invoices:", error);
+    return Response.json({ error: String(error) }, { status: 500 });
   }
 }

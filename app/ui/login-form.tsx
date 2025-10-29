@@ -1,4 +1,4 @@
-"use cliente";
+"use client";
 
 import { lusitana } from "../ui/font";
 import {
@@ -9,7 +9,7 @@ import {
 import { ArrowRightIcon } from "@heroicons/react/20/solid";
 import { Button } from "./button";
 import { useActionState } from "react";
-import { authenticate } from "@/app/lib/actions";
+import { authenticate } from "../lib/actions";
 import { useSearchParams } from "next/navigation";
 
 export default function LoginForm() {
@@ -20,7 +20,7 @@ export default function LoginForm() {
     undefined
   );
   return (
-    <form className="space-y-3" action={formAction}>
+    <form action={formAction} className="space-y-3">
       <div className="flex-1 rounded-lg bg-gray-50 px-6 pb-4 pt-8">
         <h1 className={`${lusitana.className} mb-3 text-2xl`}>
           Please log in to continue.
